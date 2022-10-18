@@ -1,14 +1,14 @@
 FROM ubuntu:20.04
 
-# ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND noninteractive
 
 # Update
 RUN apt-get update --fix-missing && apt-get -y upgrade
 
 # Install gcc
-RUN apt install build-essential
-RUN apt-get install manpages-dev
-RUN gcc --version
+RUN apt-get update && \
+    apt-get -y install gcc mono-mcs && \
+    rm -rf /var/lib/apt/lists/*
 
 # Compile
 ADD challenge/script.sh /home/ctf/script.sh
