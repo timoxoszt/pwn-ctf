@@ -5,6 +5,11 @@ FROM ubuntu:20.04
 # Update
 RUN apt-get update --fix-missing && apt-get -y upgrade
 
+# Install gcc
+RUN apt install build-essential
+RUN apt-get install manpages-dev
+RUN gcc --version
+
 # Compile
 ADD challenge/script.sh /home/ctf/script.sh
 RUN chmod +x /home/ctf/script.sh
