@@ -12,6 +12,7 @@ RUN apt-get update && \
 
 # Compile
 ADD challenge/script.sh /home/ctf/script.sh
+ADD challenge/bof.c /home/ctf/bof.c
 RUN chmod +x /home/ctf/script.sh
 RUN /home/ctf/script.sh
 
