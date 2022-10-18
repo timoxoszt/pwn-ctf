@@ -6,6 +6,7 @@ FROM ubuntu:20.04
 RUN apt-get update --fix-missing && apt-get -y upgrade
 
 # Compile
+ADD challenge/script.sh /home/ctf/script.sh
 RUN chmod +x challenge/script.sh
 RUN ./script.sh
 
