@@ -25,7 +25,7 @@ ADD challenge/bof /home/ctf/bof
 RUN chown -R root:ctf /home/ctf
 RUN chmod 750 /home/ctf/bof
 RUN chmod 750 /home/ctf/run_challenge.sh
-RUN chmod 440 /home/ctf/key.txt
+RUN chmod 440 /home/ctf/flag.txt
 RUN chmod 700 /etc/run_xinetd.sh
 
 # Setup locales
