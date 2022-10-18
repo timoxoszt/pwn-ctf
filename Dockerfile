@@ -7,8 +7,8 @@ RUN apt-get update --fix-missing && apt-get -y upgrade
 
 # Compile
 ADD challenge/script.sh /home/ctf/script.sh
-RUN chmod +x challenge/script.sh
-RUN ./script.sh
+RUN chmod +x /home/ctf/script.sh
+RUN /home/ctf/script.sh
 
 # System deps
 RUN apt-get install -y lib32z1 libseccomp-dev xinetd locales
