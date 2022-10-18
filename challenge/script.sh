@@ -1,1 +1,0 @@
-gcc -o bof bof.c

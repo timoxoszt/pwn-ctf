@@ -5,17 +5,6 @@ ENV DEBIAN_FRONTEND noninteractive
 # Update
 RUN apt-get update --fix-missing && apt-get -y upgrade
 
-# Install gcc
-RUN apt-get update && \
-    apt-get -y install gcc mono-mcs && \
-    rm -rf /var/lib/apt/lists/*
-
-# Compile
-ADD challenge/script.sh /home/ctf/script.sh
-ADD challenge/bof.c /home/ctf/bof.c
-RUN chmod +x /home/ctf/script.sh
-RUN /home/ctf/script.sh
-
 # System deps
 RUN apt-get install -y lib32z1 libseccomp-dev xinetd locales
 
